@@ -1,0 +1,316 @@
+/*
+ * cSans v1.2b
+ * 2011 Copyright A navalla suíza http://anavallasuiza.com
+ * cSans is released under the GNU Affero GPL version 3 - more information at http://www.fsf.org/licensing/licenses/agpl-3.0.html
+ *
+ * Some code has been extracted from http://necolas.github.com/normalize.css/ (thank you)
+*/
+
+/* 1. ROOT ELEMENTS */
+html {
+	height:100%;
+	font-size:100%;
+}
+html,body {
+	margin:0;
+	padding:0;
+	border:0;
+}
+body {
+	font-family:sans-serif;
+	font-size:12pt;
+	line-height:1.3em;
+	text-align:left;
+	color:#000;
+	text-rendering:optimizeLegibility;
+}
+
+/* 2. BLOCK ELEMENTS */
+/* 2.1 Generic */
+audio,canvas,iframe,img,object,embed,video,
+address,article,aside,blockquote,details,div,figcaption,figure,
+footer,h1,h2,h3,h4,h5,h6,header,hgroup,hr,nav,p,pre,section,summary {
+	margin:0;
+	padding:0;
+	border:none;
+	display:block;
+	font-size:1em;
+	line-height:1.25em;
+	outline:none;
+}
+address { font-style:normal; }
+blockquote { margin-left:1.5em; }
+svg:not(:root) { overflow:hidden; }
+hr {
+	height:1px;
+	background:none;
+	border-top:1px solid #000;
+}
+
+/* 2.2. Titles */
+h1,h2,h3,h4,h5,h6 {
+	font-weight:bold;
+	line-height:1.2em;
+	margin:1em 0 0.5em 0;
+}
+header h1,header h2,header h3,header h4,header h5,header h6,
+hgroup h1,hgroup h2,hgroup h3,hgroup h4,hgroup h5,hgroup h6 {
+	margin:0;
+}
+h1 { font-size:2em; }
+h2 { font-size:1.6em; }
+h3 { font-size:1.2em; }
+h4,h5,h6 { font-size:1em; }
+
+
+/* 3. INLINE-BLOCK ELEMENTS */
+audio,canvas,iframe,img,object,embed,video {
+	display:inline-block;
+}
+audio:not([controls]) {
+	display:none;
+}
+img { vertical-align: middle; }
+
+/* 4. INLINE ELEMENTS */
+a,abbr,b,cite,code,command,del,dfn,em,i,ins,kbd,mark,meter,q,
+samp,small,span,strong,sub,sup,time,var {
+	margin:0;
+	padding:0;
+	border:0;
+	display:inline;
+	font-size:1em;
+}
+em,dfn,i { font-style:italic; }
+strong,b { font-weight:bold; }
+small,sub,sup { font-size:0.75em; }
+mark { background-color:#FF0; }
+abbr[title],dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+mark {
+	background:#FF0;
+	color:#000;
+}
+
+/* 4.1 Sub and sup elements */
+sub,sup {
+	font-size:75%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline;
+}
+sup { top:-0.5em; }
+sub { bottom:-0.25em; }
+
+/* 4.2 Quote elements */
+blockquote, q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {
+	content:"";
+	content:none;
+}
+
+
+/* 5. FORMS */
+form,fieldset,legend {
+	margin:0;
+	padding:0;
+	border:0;
+	display:block;
+}
+button,datalist,input,keygen,label,
+optgroup,option,output,select,textarea {
+	font-size:1em;
+	line-height:1.25em;
+	font-family:inherit;
+}
+legend {
+	font-weight:bold;
+	border:0;
+}
+input { overflow-y:visible; }
+textarea {
+	width:12em;
+	height:4em;
+	overflow-y:auto;
+	display:block;
+	vertical-align:top;
+	resize:vertical;
+}
+button,input,select,textarea {
+	box-sizing:border-box;
+	vertical-align:baseline;
+	margin:0;
+}
+button,input { line-height:normal; }
+button,input[type="button"],input[type="reset"],input[type="submit"] {
+	cursor:pointer;
+	width:auto;
+	overflow:visible;
+}
+input[type="checkbox"],input[type="radio"] { padding:0; }
+
+
+/* 6. LISTS */
+ol,ul,dl,dt,dd {
+	margin:0;
+	padding:0;
+}
+ol,ul,dd { margin-left:1.5em; }
+dt { font-weight:bold; }
+ol { list-style-type:decimal; }
+ul { list-style-type:disc; }
+
+
+/* 7. TABLES */
+table {
+	margin:0;
+	padding:0;
+	border-collapse:collapse;
+	border-spacing:0;
+}
+caption,th { font-weight:bold; }
+th,td {
+	text-align:left;
+	padding:0;
+	border:1px solid #CCC;
+}
+
+/* 8 MONOSPACE ELEMENTS */
+pre,code,kbd,samp {
+	font-family:"Courier new",Courier,monospace;
+	line-height:1.5;
+	white-space:pre;
+}
+pre {
+	white-space:pre;
+	white-space:pre-wrap;
+	white-space:pre-line;
+	word-wrap:break-word;
+}
+
+
+/* 9 HELPERS */
+/* 9.1 Floating elements */
+.left { float:left !important; }
+p .left { margin-right:1em; }
+.right,.right-right { float:right !important; }
+.right-right { text-align:right !important; }
+p .right { margin-left:1em; }
+
+/* 9.2. Image replacement. Must overwrite background-image, width and height properties in your css */
+.image a,.image {
+	background-repeat:no-repeat;
+	background-color:transparent;
+	margin:0;
+	padding:0;
+	outline:none;
+	font-size:0px !important;
+	line-height:0em !important;
+	letter-spacing:-20px;
+	text-indent:-2px;
+	display:inline-block;
+	overflow:hidden;
+	text-align:left;
+	border:none;
+}
+h1.image,h2.image,h3.image,h4.image,h5.image,h6.image { display:block; }
+a.image,input.image,button.image { cursor:pointer; }
+.image a {
+	display:block;
+	width:100%;
+	height:100%;
+	height:inherit;
+}
+
+/* 9.3. Convert a block element (like a fieldset) into an inline element */
+.inline {
+	margin:0;
+	padding:0;
+	display:inline;
+}
+ul.inline,ol.inline { list-style:none; margin:0; }
+.inline li { display:inline; }
+
+/* 3.4. Clear (clearfix) */
+.clear:before,.clear:after {
+	content:"";
+	display:table;
+}
+.clear:after {
+	clear:both;
+}
+
+/* 3.5. Elements visibility */
+.hidden { display:none; }
+.invisible { visibility:hidden; }
+.hidden-a11y {
+	border:0;
+	clip:rect(0 0 0 0);
+	position:absolute;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+	padding:0;
+	margin:-1px;
+}
+[hidden] {
+	display:none;
+	visibility:hidden;
+}
+
+/* 3.6. List styles */
+.square { list-style-type:square; }
+.disc { list-style-type:disc; }
+.decimal { list-style-type:decimal; }
+.lower-alpha { list-style-type:lower-alpha; }
+.upper-alpha { list-style-type:upper-alpha; }
+.lower-roman { list-style-type:lower-roman; }
+.upper-roman { list-style-type:upper-roman; }
+
+
+/* 3.7 Target elements */
+.old-browsers {
+	display: none;
+}
+
+/* 3.8 Remove paddings, margins, etc */
+.reset,.reset * {
+	margin:0;
+	padding:0;
+	font-size:1em;
+}
+
+
+/* 4. HACKS AND VENDOR PREFIXES */
+button,input,select,textarea {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+/* Make search input equal in all browsers (with the class .no-appearance) */
+input[type="search"].no-appearance::-webkit-search-decoration,
+input[type="search"].no-appearance::-webkit-search-cancel-button,
+input[type="search"].no-appearance::-webkit-search-results-button,
+input[type="search"].no-appearance::-webkit-search-results-decoration {
+	display:none;
+}
+
+/* Unifique the appearance of inputs and textareas */
+input[type="search"].no-appearance,textarea {
+	-webkit-appearance:textfield;
+	-moz-appearance:textfield;
+}
+input[type="search"]::-webkit-search-decoration { -webkit-appearance:none; }
+button::-moz-focus-inner,input::-moz-focus-inner {
+	border:0;
+	padding:0;
+}
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
+	-webkit-appearance:button;
+}
+button::-moz-focus-inner,input::-moz-focus-inner {
+	border:0;
+	padding:0;
+}

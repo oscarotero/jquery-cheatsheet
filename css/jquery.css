@@ -1,0 +1,49 @@
+article {
+	margin: 10px 10px 0 0;
+	background: #FFF;
+	border-radius: 10px 10px 6px 6px;
+}
+article div {
+	padding: 10px;
+}
+article h1 {
+	font-size: 1em;
+	margin: 0;
+	border-bottom: solid 1px #000;
+	padding: 5px 10px;
+	background: #0D5995;
+	color: #FFF;
+	border-radius: 6px 6px 0 0;
+}
+article h2 {
+	font-size: 0.9em;
+	line-height: 1em;
+	margin: 0 0 2px 0;
+}
+article section {
+	margin-bottom: 15px;
+}
+article ul {
+	font-size: 0.8em;
+	line-height: 1em;
+	list-style: none;
+	margin: 0;
+}
+article ul li a {
+	text-decoration: none;
+	display: block;
+	padding: 4px;
+	color: #0F67A1;
+	border-bottom: solid 1px #EEE;
+}
+article ul li a:hover {
+	color: #192839;
+	background: #EEE;
+	border-bottom: solid 1px #DDD;
+}
+
+article h2.deactivate,
+article a.deactivate,
+article a.old-version {
+	color: #EEE;
+}

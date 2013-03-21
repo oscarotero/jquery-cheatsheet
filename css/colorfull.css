@@ -1,0 +1,178 @@
+article {
+	padding: 10px 10px 5px 10px;
+	margin: 10px 10px 0 0;
+	border-radius: 2px;
+}
+article h1 {
+	font-size: 1.2em;
+	margin: 0 0 15px 0;
+	border-bottom: solid 1px #000;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+article h2 {
+	font-size: 0.9em;
+	line-height: 1em;
+	margin: 0 0 2px 0;
+}
+article section {
+	margin-bottom: 15px;
+}
+article ul {
+	font-size: 0.8em;
+	line-height: 1em;
+	list-style: none;
+	margin: 0;
+}
+article ul li a {
+	text-decoration: none;
+	display: block;
+	padding: 2px;
+}
+article ul li a:hover {
+	text-shadow: 1px 1px 0 #000;
+	border-radius: 3px;
+}
+
+
+#selectors {
+	background: #FFDD3A;
+}
+#selectors a {
+	color: #4B3F02;
+	background: none;
+}
+#selectors a:hover {
+	background: #4B3F02;
+	color: #FFDD3A;
+}
+#selectors h2.deactivate,
+#selectors a.deactivate,
+#selectors a.old-version {
+	color: #E0BF22;
+}
+
+
+#attributes {
+	background: #FF7B3A;
+}
+#attributes a {
+	color: #4D1A01;
+	background: none;
+}
+#attributes a:hover {
+	background: #4D1A01;
+	color: #FF7B3A;
+}
+#attributes h2.deactivate,
+#attributes a.deactivate,
+#attributes a.old-version {
+	color: #EB6726;
+}
+
+
+#manipulation {
+	background: #E449A1;
+}
+#manipulation a {
+	color: #5F0538;
+	background: none;
+}
+#manipulation a:hover {
+	color: #E449A1;
+	background: #5F0538;
+}
+#manipulation h2.deactivate,
+#manipulation a.deactivate,
+#manipulation a.old-version {
+	color: #C8458F;
+}
+
+
+#traversing {
+	background: #AF4FDD;
+}
+#traversing a {
+	color: #3E0559;
+	background: none;
+}
+#traversing a:hover {
+	color: #AF4FDD;
+	background: #3E0559;
+}
+#traversing h2.deactivate,
+#traversing a.deactivate,
+#traversing a.old-version {
+	color: #9649BB;
+}
+
+
+#events {
+	background: #507BD5;
+}
+#events a {
+	color: #002063;
+	background: none;
+}
+#events a:hover {
+	color: #507BD5;
+	background: #002063;
+}
+#events h2.deactivate,
+#events a.deactivate,
+#events a.old-version {
+	color: #436CC2;
+}
+
+
+#effects {
+	background: #1CB1DA;
+}
+#effects a {
+	color: #03495C;
+	background: none;
+}
+#effects a:hover {
+	color: #1CB1DA;
+	background: #03495C;
+}
+#effects h2.deactivate,
+#effects a.deactivate,
+#effects a.old-version {
+	color: #2991AE;
+}
+
+
+#ajax {
+	background: #0FD55C;
+}
+#ajax a {
+	color: #025221;
+	background: none;
+}
+#ajax a:hover {
+	color: #0FD55C;
+	background: #025221;
+}
+#ajax h2.deactivate,
+#ajax a.deactivate,
+#ajax a.old-version {
+	color: #1BAD53;
+}
+
+
+#core {
+	background: #9DF417;
+}
+#core a {
+	color: #365505;
+	background: none;
+}
+#core a:hover {
+	color: #9DF417;
+	background: #365505;
+}
+#core h2.deactivate,
+#core a.deactivate,
+#core a.old-version {
+	color: #95D533;
+}
