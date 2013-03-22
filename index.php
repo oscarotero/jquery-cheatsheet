@@ -347,6 +347,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 							<li><a class="v1-0" title="Add elements to the set of matched elements." href="http://api.jquery.com/add/">.add()</a></li>
 							<li><a class="v1-2 v1-8-d" title="Add the previous set of elements on the stack to the current set." href="http://api.jquery.com/andSelf/">.andSelf()</a></li>
 							<li><a class="v1-2" title="Get the children of each element in the set of matched elements, including text and comment nodes." href="http://api.jquery.com/contents/">.contents()</a></li>
+							<li><a class="v1-0" title="Iterate over a jQuery object, executing a function for each matched element." href="http://api.jquery.com/each/">.each()</a></li>
 							<li><a class="v1-0" title="End the most recent filtering operation in the current chain and return the set of matched elements to its previous state." href="http://api.jquery.com/end/">.end()</a></li>
 						</ul>
 					</section>
@@ -588,7 +589,6 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 							<li><a class="v1-0 v1-3-d" title="States if the current page, in the user's browser, is being rendered using the W3C CSS Box Model." href="http://api.jquery.com/jQuery.boxModel/">jQuery.boxModel</a></li>
 							<li><a class="v1-0 v1-3-d v1-9-r" title="Contains flags for the useragent, read from navigator.userAgent. We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery." href="http://api.jquery.com/jQuery.browser/">jQuery.browser</a></li>
 							<li><a class="v1-4" title="Check to see if a DOM node is within another DOM node." href="http://api.jquery.com/jQuery.contains/">jQuery.contains()</a></li>
-							<li><a class="v1-0" title="" href="http://api.jquery.com/each/">each</a></li>
 							<li><a class="v1-0" title="A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties." href="http://api.jquery.com/jQuery.each/">jQuery.each()</a></li>
 							<li><a class="v1-0" title="Merge the contents of two or more objects together into the first object." href="http://api.jquery.com/jQuery.extend/">jQuery.extend()</a></li>
 							<li><a class="v1-0-4" title="Execute some JavaScript code globally." href="http://api.jquery.com/jQuery.globalEval/">jQuery.globalEval()</a></li>
@@ -624,16 +624,16 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 							<li><a class="v1-0" title="Retrieve the DOM elements matched by the jQuery object." href="http://api.jquery.com/get/">.get()</a></li>
 							<li><a class="v1-0" title="Search for a given element from among the matched elements." href="http://api.jquery.com/index/">.index()</a></li>
 							<li><a class="v1-0 v1-8-d" title="Return the number of elements in the jQuery object." href="http://api.jquery.com/size/">.size()</a></li>
-							<li><a class="v1-4" title="Retrieve all the DOM elements contained in the jQuery set, as an array." href="http://api.jquery.com/toArray/">toArray()</a></li>
+							<li><a class="v1-4" title="Retrieve all the DOM elements contained in the jQuery set, as an array." href="http://api.jquery.com/toArray/">.toArray()</a></li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Internals</h2>
 						<ul>
-							<li><a class="v1-0" title="A string containing the jQuery version number." href="http://api.jquery.com/.jquery/">.jquery</a></li>
+							<li><a class="v1-0" title="A string containing the jQuery version number." href="http://api.jquery.com/jquery-2/">.jquery</a></li>
 							<li><a class="v1-3" title="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document." href="http://api.jquery.com/context/">.context</a></li>
-							<li><a class="v1-4-1" title="Takes a string and throws an exception containing it." href="http://api.jquery.com/jQuery.error/">jQuery.error</a></li>
+							<li><a class="v1-4-1" title="Takes a string and throws an exception containing it." href="http://api.jquery.com/jQuery.error/">jQuery.error()</a></li>
 							<li><a class="v1-0" title="The number of elements in the jQuery object." href="http://api.jquery.com/length/">.length</a></li>
 							<li><a class="v1-0" title="Add a collection of DOM elements onto the jQuery stack." href="http://api.jquery.com/pushStack/">.pushStack()</a></li>
 							<li><a class="v1-3" title="A selector representing selector originally passed to jQuery()." href="http://api.jquery.com/selector/">.selector</a></li>
