@@ -1,0 +1,11 @@
+AddDefaultCharset utf-8
+
+AddType text/cache-manifest appcache manifest
+
+<IfModule mod_pagespeed.c>
+	ModPagespeed off
+</IfModule>
+
+<IfModule pagespeed_module>
+	ModPagespeed off
+</IfModule>

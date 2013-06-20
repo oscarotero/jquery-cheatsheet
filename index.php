@@ -7,7 +7,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" manifest="offline.manifest">
+<html lang="en" manifest="cache.manifest">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>jQuery Cheatsheet</title>
@@ -20,11 +20,11 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 		<meta name="author" content="Oscar Otero - http://oscarotero.com">
-		<meta name="title" content="jQuery Cheatsheet 1.7">
+		<meta name="title" content="jQuery Cheatsheet">
 		<meta name="description" content="jQuery Cheatsheet in HTML with links to the original API documentation">
 		<meta name="keywords" content="jQuery, javascript, cheatsheet, api, resource, web developer">
 
-		<meta property="og:title" content="jQuery Cheatsheet 1.7">
+		<meta property="og:title" content="jQuery Cheatsheet">
 		<meta property="og:image" content="http://oscarotero.com/jquery/jquery.png">
 		<meta property="og:description" content="jQuery Cheatsheet in HTML with links to the original API documentation">
 
