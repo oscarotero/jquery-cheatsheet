@@ -208,11 +208,11 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 					<section>
 						<h2>Attributes</h2>
 						<ul>
-							<li><a class="v1-0" title="Get the value of an attribute for the first element in the set of matched elements." href="http://api.jquery.com/attr/">.attr()</a></li>
-							<li><a class="v1-6" title="Get the value of a property for the first element in the set of matched elements." href="http://api.jquery.com/prop/">.prop()</a></li>
+							<li><a class="v1-0" title="Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element." href="http://api.jquery.com/attr/">.attr()</a></li>
+							<li><a class="v1-6" title="Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element." href="http://api.jquery.com/prop/">.prop()</a></li>
 							<li><a class="v1-0" title="Remove an attribute from each element in the set of matched elements." href="http://api.jquery.com/removeAttr/">.removeAttr()</a></li>
 							<li><a class="v1-6" title="Remove a property for the set of matched elements." href="http://api.jquery.com/removeProp/">.removeProp()</a></li>
-							<li><a class="v1-0" title="Get the current value of the first element in the set of matched elements." href="http://api.jquery.com/val/">.val()</a></li>
+							<li><a class="v1-0" title="Get the current value of the first element in the set of matched elements or set the value of every matched element." href="http://api.jquery.com/val/">.val()</a></li>
 						</ul>
 					</section>
 
@@ -220,7 +220,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 						<h2>CSS</h2>
 						<ul>
 							<li><a class="v1-0" title="Adds the specified class(es) to each of the set of matched elements." href="http://api.jquery.com/addClass/">.addClass()</a></li>
-							<li><a class="v1-0" title="Get the value of a style property for the first element in the set of matched elements." href="http://api.jquery.com/css/">.css()</a></li>
+							<li><a class="v1-0" title="Get the value of a style property for the first element in the set of matched elements or set one or more CSS properties for every matched element." href="http://api.jquery.com/css/">.css()</a></li>
 							<li><a class="v1-4-3" title="Provides a way to hook directly into jQuery to override how particular CSS properties are retrieved or set. Amongst other uses, cssHooks can be used to create custom, browser-normalized properties for CSS3 features such as box-shadows and gradients." href="http://api.jquery.com/jQuery.cssHooks/">jQuery.cssHooks</a></li>
 							<li><a class="v1-2" title="Determine whether any of the matched elements are assigned the given class." href="http://api.jquery.com/hasClass/">.hasClass()</a></li>
 							<li><a class="v1-0" title="Remove a single class, multiple classes, or all classes from each element in the set of matched elements." href="http://api.jquery.com/removeClass/">.removeClass()</a></li>
@@ -231,31 +231,31 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 					<section>
 						<h2>Dimensions</h2>
 						<ul>
-							<li><a class="v1-0" title="Get the current computed height for the first element in the set of matched elements." href="http://api.jquery.com/height/">.height()</a></li>
+							<li><a class="v1-0" title="Get the current computed height for the first element in the set of matched elements or set the height of every matched element." href="http://api.jquery.com/height/">.height()</a></li>
 							<li><a class="v1-2-6" title="Get the current computed height for the first element in the set of matched elements, including padding but not border." href="http://api.jquery.com/innerHeight/">.innerHeight()</a></li>
 							<li><a class="v1-2-6" title="Get the current computed width for the first element in the set of matched elements, including padding but not border." href="http://api.jquery.com/innerWidth/">.innerWidth()</a></li>
 							<li><a class="v1-2-6" title="Get the current computed height for the first element in the set of matched elements, including padding, border, and optionally margin." href="http://api.jquery.com/outerHeight/">.outerHeight()</a></li>
 							<li><a class="v1-2-6" title="Get the current computed width for the first element in the set of matched elements, including padding and border." href="http://api.jquery.com/outerWidth/">.outerWidth()</a></li>
-							<li><a class="v1-0" title="Get the current computed width for the first element in the set of matched elements." href="http://api.jquery.com/width/">.width()</a></li>
+							<li><a class="v1-0" title="Get the current computed width for the first element in the set of matched elements or set the width of every matched element." href="http://api.jquery.com/width/">.width()</a></li>
 						</ul>
 					</section>
 					
 					<section>
 						<h2>Offset</h2>
 						<ul>
-							<li><a class="v1-2" title="Get the current coordinates of the first element in the set of matched elements, relative to the document." href="http://api.jquery.com/offset/">.offset()</a></li>
+							<li><a class="v1-2" title="Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document." href="http://api.jquery.com/offset/">.offset()</a></li>
 							<li><a class="v1-2-6" title="Get the closest ancestor element that is positioned." href="http://api.jquery.com/offsetParent/">.offsetParent()</a></li>
 							<li><a class="v1-2" title="Get the current coordinates of the first element in the set of matched elements, relative to the offset parent." href="http://api.jquery.com/position/">.position()</a></li>
-							<li><a class="v1-2-6" title="Get the current horizontal position of the scroll bar for the first element in the set of matched elements." href="http://api.jquery.com/scrollLeft/">.scrollLeft()</a></li>
-							<li><a class="v1-2-6" title="Get the current vertical position of the scroll bar for the first element in the set of matched elements." href="http://api.jquery.com/scrollTop/">.scrollTop()</a></li>
+							<li><a class="v1-2-6" title="Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element." href="http://api.jquery.com/scrollLeft/">.scrollLeft()</a></li>
+							<li><a class="v1-2-6" title="Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element." href="http://api.jquery.com/scrollTop/">.scrollTop()</a></li>
 						</ul>
 					</section>
 					
 					<section>
 						<h2>Data</h2>
 						<ul>
-							<li><a class="v1-2-3" title="Store arbitrary data associated with the specified element." href="http://api.jquery.com/jQuery.data/">jQuery.data()</a></li>
-							<li><a class="v1-2-3" title="Store arbitrary data associated with the matched elements." href="http://api.jquery.com/data/">.data()</a></li>
+							<li><a class="v1-2-3" title="Store arbitrary data associated with the specified element and/or return the value that was set." href="http://api.jquery.com/jQuery.data/">jQuery.data()</a></li>
+							<li><a class="v1-2-3" title="Store arbitrary data associated with the matched elements or return the value at the named data store for the first element in the set of matched elements." href="http://api.jquery.com/data/">.data()</a></li>
 							<li><a class="v1-5" title="Determine whether an element has any jQuery data associated with it." href="http://api.jquery.com/jQuery.hasData/">jQuery.hasData()</a></li>
 							<li><a class="v1-2-3" title="Remove a previously-stored piece of data." href="http://api.jquery.com/jQuery.removeData/">jQuery.removeData()</a></li>
 							<li><a class="v1-2-3" title="Remove a previously-stored piece of data." href="http://api.jquery.com/removeData/">.removeData()</a></li>
@@ -287,10 +287,10 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 						<ul>
 							<li><a class="v1-0" title="Insert content, specified by the parameter, to the end of each element in the set of matched elements." href="http://api.jquery.com/append/">.append()</a></li>
 							<li><a class="v1-0" title="Insert every element in the set of matched elements to the end of the target." href="http://api.jquery.com/appendTo/">.appendTo()</a></li>
-							<li><a class="v1-0" title="Get the HTML contents of the first element in the set of matched elements." href="http://api.jquery.com/html/">.html()</a></li>
+							<li><a class="v1-0" title="Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element." href="http://api.jquery.com/html/">.html()</a></li>
 							<li><a class="v1-0" title="Insert content, specified by the parameter, to the beginning of each element in the set of matched elements." href="http://api.jquery.com/prepend/">.prepend()</a></li>
 							<li><a class="v1-0" title="Insert every element in the set of matched elements to the beginning of the target." href="http://api.jquery.com/prependTo/">.prependTo()</a></li>
-							<li><a class="v1-0" title="Get the combined text contents of each element in the set of matched elements, including their descendants." href="http://api.jquery.com/text/">.text()</a></li>
+							<li><a class="v1-0" title="Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements." href="http://api.jquery.com/text/">.text()</a></li>
 						</ul>
 					</section>
 
@@ -500,8 +500,8 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 							<li><a class="v1-9" title="Stop the currently-running animation, remove all queued animations, and complete all animations for the matched elements." href="http://api.jquery.com/finish/">.finish()</a></li>
 							<li><a class="v1-4-3" title="The rate (in milliseconds) at which animations fire." href="http://api.jquery.com/jQuery.fx.interval">jQuery.fx.interval</a></li>
 							<li><a class="v1-3" title="Globally disable all animations." href="http://api.jquery.com/jQuery.fx.off">jQuery.fx.off</a></li>
-							<li><a class="v1-2" title="Show the queue of functions to be executed on the matched elements." href="http://api.jquery.com/queue">.queue()</a></li>
-							<li><a class="v1-3" title="Show the queue of functions to be executed on the matched elements." href="http://api.jquery.com/jQuery.queue/">jQuery.queue()</a></li>
+							<li><a class="v1-2" title="Show or manipulate the queue of functions to be executed on the matched elements." href="http://api.jquery.com/queue">.queue()</a></li>
+							<li><a class="v1-3" title="Show or manipulate the queue of functions to be executed on the matched element." href="http://api.jquery.com/jQuery.queue/">jQuery.queue()</a></li>
 							<li><a class="v1-2" title="Stop the currently-running animation on the matched elements." href="http://api.jquery.com/stop">.stop()</a></li>
 						</ul>
 					</section>
@@ -576,7 +576,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 					<section>
 						<h2>jQuery Object</h2>
 						<ul>
-							<li><a class="v1-0" title="Accepts a string containing a CSS selector which is then used to match a set of elements." href="http://api.jquery.com/jQuery/">jQuery()</a></li>
+							<li><a class="v1-0" title="Return a collection of matched elements either found in the DOM based on passed argument(s) or created by passing an HTML string." href="http://api.jquery.com/jQuery/">jQuery()</a></li>
 							<li><a class="v1-0" title="Relinquish jQuery's control of the $ variable." href="http://api.jquery.com/jQuery.noConflict/">jQuery.noConflict()</a></li>
 							<li><a class="v1-5 v1-7-d v1-9-r" title="Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object." href="http://api.jquery.com/jQuery.sub/">jQuery.sub()</a></li>
 							<li><a class="v1-5" title="Provides a way to execute callback functions based on one or more objects, usually Deferred objects that represent asynchronous events." href="http://api.jquery.com/jQuery.when/">jQuery.when()</a></li>
