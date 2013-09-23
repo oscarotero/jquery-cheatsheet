@@ -7,7 +7,8 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 ?>
 <!DOCTYPE html>
 
-<html lang="en" manifest="cache.manifest">
+<?php /*<html lang="en" manifest="cache.manifest">*/ ?>
+<html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<title>jQuery Cheatsheet</title>
