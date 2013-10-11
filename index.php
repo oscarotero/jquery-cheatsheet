@@ -57,6 +57,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 			<nav>
 				<label>Version: 
 					<select id="version">
+						<option value="a.v1-10">1.10</option>
 						<option value="a.v1-9">1.9</option>
 						<option value="a.v1-8">1.8</option>
 						<option value="a.v1-7">1.7</option>
@@ -633,7 +634,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 						<h2>Internals</h2>
 						<ul>
 							<li><a class="v1-0" title="A string containing the jQuery version number." href="http://api.jquery.com/jquery-2/">.jquery</a></li>
-							<li><a class="v1-3" title="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document." href="http://api.jquery.com/context/">.context</a></li>
+							<li><a class="v1-3 v1-10-d" title="The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document." href="http://api.jquery.com/context/">.context</a></li>
 							<li><a class="v1-4-1" title="Takes a string and throws an exception containing it." href="http://api.jquery.com/jQuery.error/">jQuery.error()</a></li>
 							<li><a class="v1-0" title="The number of elements in the jQuery object." href="http://api.jquery.com/length/">.length</a></li>
 							<li><a class="v1-0" title="Add a collection of DOM elements onto the jQuery stack." href="http://api.jquery.com/pushStack/">.pushStack()</a></li>
