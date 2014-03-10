@@ -57,7 +57,7 @@ if (isset($_COOKIE['settings']) && ($settings = $_COOKIE['settings'])) {
 			<nav>
 				<label>Version: 
 					<select id="version">
-						<option value="a.v1-10">1.10</option>
+						<option value="a.v1-10">1.10 / 2.0</option>
 						<option value="a.v1-9">1.9</option>
 						<option value="a.v1-8">1.8</option>
 						<option value="a.v1-7">1.7</option>
