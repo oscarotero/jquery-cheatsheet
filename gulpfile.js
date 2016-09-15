@@ -10,9 +10,9 @@ const gulp    = require('gulp'),
 
 
 gulp.task('dev', function (done) {
-	config.dev = true;
-	config.url = 'http://localhost:3000';
-	done();
+      config.dev = true;
+      config.url = 'http://localhost:3000';
+      done();
 });
 
 gulp.task('css', css);
