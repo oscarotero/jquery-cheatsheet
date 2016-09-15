@@ -1,0 +1,44 @@
+{
+	"files": [
+		{
+			"input": "styles.css",
+			"output": "styles.css"
+		},
+		{
+			"input": "styles-print.css",
+			"output": "styles-print.css"
+		}
+	],
+	"support": {
+		"explorer": 10,
+		"edge": false,
+		"firefox": 39,
+		"chrome": 43,
+		"safari": 8,
+		"opera": false,
+		"android": 4.1,
+		"ios": 8.1
+	},
+	"plugins": [
+		"base64",
+		"bower-loader",
+		"calc",
+		"color",
+		"custom-media",
+		"custom-selector",
+		"extend",
+		"fixes",
+		"flex",
+		"import",
+		"matches",
+		"msfilter-background-alpha",
+		"msfilter-linear-gradient",
+		"msfilter-transform",
+		"nested-rules",
+		"prefixes",
+		"rem",
+		"variables",
+		"webkit-gradient"
+	],
+	"code": "minify"
+}

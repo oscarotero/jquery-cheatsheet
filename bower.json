@@ -1,0 +1,12 @@
+{
+  "name": "jquery-cheat-sheet",
+  "homepage": "http://oscarotero.com/jquery",
+  "private": true,
+  "dependencies": {
+    "jquery": "*",
+    "magnific-popup": "*",
+    "selectize": "0.12.2",
+    "normalize.css": "~3.0.3",
+    "apache-server-configs": "^2.14.0"
+  }
+}

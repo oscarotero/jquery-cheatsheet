@@ -1,0 +1,63 @@
+@import "//fonts.googleapis.com/css?family=Droid+Sans:regular,bold";
+@import "normalize.css";
+
+body {
+    font-family: 'Droid Sans', Helvetica, sans-serif;
+    padding: 1em;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.ads,
+.filter-group,
+#about-link,
+.mfp-hide {
+    display: none;
+}
+.main-header {
+    padding: .5rem;
+
+    h1 {
+        font-size: 1em;
+        margin: 0;
+    }
+}
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    > article {
+        border: solid 2px;
+        margin: .5rem;
+        padding: 1rem;
+        page-break-inside: avoid;
+
+        > div {
+            display: flex;
+
+            > div + div {
+                margin-left: 1rem;
+            }
+        }
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: .9em;
+        margin: 0;
+    }
+    h2 {
+        font-size: 0.9rem;
+        line-height: 1em;
+        margin: 0 0 .2em 0;
+    }
+    section {
+        margin-top: 1em;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}

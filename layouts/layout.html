@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<!--
+Designed and developed by:
+┌─┐┌─┐┌─┐┌─┐┬─┐  ┌─┐┌┬┐┌─┐┬─┐┌─┐
+│ │└─┐│  ├─┤├┬┘  │ │ │ ├┤ ├┬┘│ │
+└─┘└─┘└─┘┴ ┴┴└─  └─┘ ┴ └─┘┴└─└─┘
+https://oscarotero.com
+-->
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>jQuery Cheat Sheet</title>
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="Oscar Otero - https://oscarotero.com">
+        <meta name="title" content="jQuery Cheat Sheet">
+        <meta name="description" content="jQuery cheat sheet in HTML with links to the original API documentation">
+        <meta name="keywords" content="jQuery, javascript, cheatsheet, api, resource, web developer">
+
+        <meta property="og:title" content="jQuery Cheat Sheet">
+        <meta property="og:image" content="{{url 'jquery.png'}}">
+        <meta property="og:description" content="jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@misteroom">
+        <meta name="twitter:creator" content="@misteroom">
+        <meta name="twitter:title" content="JQuery Cheat Sheet">
+        <meta name="twitter:description" content="jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero">
+        <meta name="twitter:image" content="{{url 'jquery.png'}}">
+
+        <link rel="stylesheet" href="{{url 'css/styles.css'}}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{{url 'css/styles-print.css'}}" type="text/css" media="print">
+        <script type="text/javascript" src="{{url 'js/main.js'}}"></script>
+        <script>
+          if (document.childNodes[1].nodeType === 8) {
+            console.log(document.childNodes[1].nodeValue);
+          }
+        </script>
+    </head>
+
+    <body>
+        <header class="main-header">
+            <h1>
+                <strong><a href="http://jquery.com/" title="Go to jQuery site">jQuery</a></strong>
+                Quick API Reference
+            </h1>
+
+            <div class="filter-group">
+                <div class="filter filter-version">
+                    <select id="version" data-placeholder="Version...">
+                        {{#each (reverse versions)}}
+                        <option data-source="{{this.source}}" value="{{this.value}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="filter filter-search">
+                    <select id="search" placeholder="Search...">
+                        <option></option>
+
+                        {{#*inline "option"}}
+                        {{#each section.sections}}
+                            {{#each this.items}}
+                                <option data-data="{{itemOptionData ../../section.slug}}" value="{{this.doc}}">{{this.text}}{{section.slug}}</option>
+                            {{/each}}
+                        {{/each}}
+                        {{/inline}}
+
+                        {{>option section=selectors}}
+                        {{>option section=attributes}}
+                        {{>option section=manipulation}}
+                        {{>option section=traversing}}
+                        {{>option section=events}}
+                        {{>option section=effects}}
+                        {{>option section=ajax}}
+                        {{>option section=core}}
+                    </select>
+                </div>
+            </div>
+
+            <a class="about" href="#about" id="about-link">Preferences...</a>
+        </header>
+
+        {{#*inline "article"}}
+        <article id="{{article.slug}}" class="{{article.slug}}">
+            <h1>{{article.title}}</h1>
+
+            <div>
+                <div>
+                {{#*inline "section"}}
+                <section>
+                    <h2>{{this.title}}</h2>
+
+                    <ul>
+                        {{#each this.items}}
+                        <li>
+                            <a class="{{itemClass}}" title="{{this.title}}" href="https://api.jquery.com/{{this.doc}}/" data-src="{{this.src}}">
+                                {{this.text}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </section>
+                {{/inline}}
+
+                {{#each article.sections}}
+                    {{#if this.break}}
+                        </div><div>
+                    {{/if}}
+
+                    {{>section}}
+                {{/each}}
+                </div>
+            </div>
+        </article>
+        {{/inline}}
+
+        <div class="main-content ly-horizontal">
+            {{>article article=selectors}}
+            {{>article article=attributes}}
+            {{>article article=manipulation}}
+            {{>article article=traversing}}
+            {{>article article=events}}
+            {{>article article=effects}}
+            {{>article article=ajax}}
+            {{>article article=core}}
+        </div>
+
+        <div class="ads">
+            <a href="http://www.jspplang.org/" target="_blank" title="Go to JavaScript++">
+                <strong>Click here to learn about JavaScript++</strong>, which provides classes, type checking, and modules. It also works with jQuery
+            </a>
+        </div>
+
+        <div id="about" class="mfp-hide">
+            <fieldset>
+                <h4>Open links:</h4>
+                <label><input type="radio" name="open_links" value="modal-window"> Modal window</label>
+                <label><input type="radio" name="open_links" value="new-window"> New window</label>
+                <label><input type="radio" name="open_links" value="same-window"> Same window</label>
+            </fieldset>
+
+            <fieldset>
+                <h4>Layout:</h4>
+                <label><input type="radio" name="layout" value="horizontal"> Horizontal</label>
+                <label><input type="radio" name="layout" value="vertical"> Vertical</label>
+            </fieldset>
+
+            <p><a href="https://github.com/oscarotero/jquery-cheatsheet" title="Get the code from github">Source code</a> | by <a href="https://twitter.com/misteroom">@misteroom</a></p>
+        </div>
+
+        <div id="modal" class="mfp-hide">
+            <ul>
+                <li class="link-api"><a href="">API doc</a></li>
+                <li class="link-src"><a href="http://james.padolsey.com/jquery/" target="_blank">Source viewer</a></li>
+            </ul>
+            <div>
+                <iframe src="about:blank"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
