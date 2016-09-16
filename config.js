@@ -1,6 +1,6 @@
 module.exports = {
-    url: 'http://oscarotero.com/jquery-dev',
-    deploy: 'oscarotero.com:~/jquery-dev',
+    url: 'http://oscarotero.com/jquery',
+    deploy: 'oscarotero.com:~/www/jquery',
     paths: {
         root: __dirname,
         src: 'src',
