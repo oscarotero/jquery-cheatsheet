@@ -10,9 +10,9 @@ const gulp     = require('gulp'),
  */
 module.exports = function (done) {
   gulp
-    .src(path.join(paths.root, paths.img, '/**/*.{jpg,png,gif,svg}'))
+    .src(path.join(paths.root, paths.src, paths.img, '/**/*.{jpg,png,gif,svg}'))
     .on('error', function (error) {
-      console.log(error.toString());
+      console.error(error);
       this.emit('end');
     })
     .pipe(gulpif(!config.dev, imagemin()))

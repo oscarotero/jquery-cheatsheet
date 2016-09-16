@@ -61,15 +61,15 @@ module.exports = function (done) {
 
   metalsmith(paths.root)
     .metadata(config.metadata || {})
-    .source(paths.src)
+    .source(path.join(paths.src, paths.data))
     .destination(paths.build)
     .clean(false)
     .use(markdown())
     .use(permalinks())
     .use(layouts({
       engine: 'handlebars',
-      layouts: paths.layouts,
-      partials: paths.partials,
+      directory: path.join(paths.src, paths.layouts),
+      partials: path.join(paths.src, paths.partials),
       exposeConsolidate: function (requires) {
         requires.handlebars = handlebars;
       }
@@ -79,7 +79,7 @@ module.exports = function (done) {
     }))
     .build(function(err, files) {
       if (err) {
-        throw err;
+        console.error(err);
       }
 
       done();

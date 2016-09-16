@@ -9,7 +9,11 @@ const gulp     = require('gulp'),
 module.exports = function (done) {
   config.copy.forEach(function (file) {
     gulp
-      .src(path.join(paths.root, file))
+      .src(path.join(paths.root, paths.src, file))
+      .on('error', function (error) {
+        console.error(error);
+        this.emit('end');
+      })
       .pipe(gulp.dest(path.join(paths.root, paths.build)));
   });
 

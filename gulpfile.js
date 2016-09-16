@@ -21,6 +21,6 @@ gulp.task('img', img);
 gulp.task('js', js);
 gulp.task('favicon', favicon);
 gulp.task('serve', ['dev', 'default'], serve);
-gulp.task('deploy', ['default', 'favicon'], deploy);
+gulp.task('deploy', deploy);
 
 gulp.task('default', ['html', 'css', 'js', 'img']);

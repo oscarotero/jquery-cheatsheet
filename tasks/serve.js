@@ -12,7 +12,7 @@ module.exports = function () {
 	gulp.watch(path.join(paths.root, paths.css, '/**/*.css'), ['css']);
 	gulp.watch(path.join(paths.root, paths.img, '/**/*.{jpg,png,gif,svg}'), ['img']);
 	gulp.watch([
-		path.join(paths.root, paths.src, '/**/*'),
+		path.join(paths.root, paths.data, '/**/*'),
 		path.join(paths.root, paths.layouts, '/**/*'),
 		path.join(paths.root, paths.partials, '/**/*')
 	], ['html']);

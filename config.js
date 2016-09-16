@@ -1,23 +1,24 @@
 module.exports = {
     url: 'http://oscarotero.com/jquery-dev',
-    deploy: {
-        hostname: 'oscarotero.com',
-        destination: '~/jquery-dev',
-    },
+    deploy: 'oscarotero.com:~/jquery-dev',
     paths: {
         root: __dirname,
-        build: 'build',
         src: 'src',
+        build: 'build',
+        data: 'data',
         layouts: 'layouts',
         partials: 'layouts/partials',
         css: 'css',
         js: 'js',
-        img: 'img',
+        img: 'img'
     },
     metadata: {
         title: 'jQuery Cheatsheet'
     },
-    copy: ['jquery.pdf', 'jquery.png'],
+    copy: [
+        'jquery.pdf',
+        'jquery.png'
+    ],
     stylecow: require('./stylecow.json'),
     webpack: require('./webpack.config'),
     favicon: require('./favicon.config')

@@ -18,11 +18,11 @@ module.exports = function (done) {
 
   config.stylecow.files.forEach(function (file) {
     gulp
-      .src(path.join(paths.root, paths.css, file.input))
+      .src(path.join(paths.root, paths.src, paths.css, file.input))
       .pipe(stylecow(config.stylecow))
       .on('error', function (error) {
-          console.log(error.toString());
-          this.emit('end');
+        console.error(error);
+        this.emit('end');
       })
       .pipe(rename(file.output))
       .pipe(gulp.dest(path.join(paths.root, paths.build, paths.css)));

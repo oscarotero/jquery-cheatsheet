@@ -12,7 +12,6 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-real-favicon": "^0.2.1",
     "gulp-rename": "^1.2.2",
-    "gulp-rsync": "0.0.6",
     "gulp-stylecow": "^3.1.1",
     "handlebars": "^4.0.5",
     "metalsmith": "^2.1.0",
@@ -20,9 +19,11 @@
     "metalsmith-layouts": "^1.4.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.5.0",
+    "rsync": "^0.5.0",
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "install": "bower install"
+    "install": "bower install",
+    "start": "gulp serve"
   }
 }

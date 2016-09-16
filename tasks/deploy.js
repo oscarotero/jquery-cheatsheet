@@ -1,5 +1,5 @@
 const gulp     = require('gulp'),
-      rsync    = require('gulp-rsync'),
+      rsync    = require('rsync'),
       path     = require('path'),
       config   = require('../config'),
       paths    = config.paths;
@@ -7,9 +7,18 @@ const gulp     = require('gulp'),
 /**
  * EXPORTS
  */
-module.exports = function () {
-  config.deploy.root = path.join(paths.root, paths.build);
+module.exports = function (done) {
+  const deploy = new rsync()
+    .shell('ssh')
+    .source(path.join(paths.root, paths.build, '/**'))
+    .recursive()
+    .destination(config.deploy);
 
-  gulp.src(path.join(paths.root, paths.build, '**'))
-    .pipe(rsync(config.deploy));
+  deploy.execute(function (error, code, cmd) {
+    if (error) {
+      console.error(error);
+    }
+
+    done();
+  });
 };
