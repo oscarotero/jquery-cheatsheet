@@ -13,7 +13,11 @@ module.exports = {
         img: 'img'
     },
     metadata: {
-        title: 'jQuery Cheatsheet'
+        title: 'jQuery Cheat Sheet',
+        description: 'jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero',
+        author: 'Oscar Otero - https://oscarotero.com',
+        keywords: 'jQuery, javascript, cheatsheet, api, resource, web developer',
+        twitter: '@misteroom',
     },
     copy: [
         'jquery.pdf',

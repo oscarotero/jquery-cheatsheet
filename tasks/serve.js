@@ -8,13 +8,13 @@ const gulp     = require('gulp'),
  * EXPORTS
  */
 module.exports = function () {
-	gulp.watch(path.join(paths.root, paths.js, '/**/*.js'), ['js']);
-	gulp.watch(path.join(paths.root, paths.css, '/**/*.css'), ['css']);
-	gulp.watch(path.join(paths.root, paths.img, '/**/*.{jpg,png,gif,svg}'), ['img']);
+	gulp.watch(path.join(paths.root, paths.src, paths.js, '/**/*.js'), ['js']);
+	gulp.watch(path.join(paths.root, paths.src, paths.css, '/**/*.css'), ['css']);
+	gulp.watch(path.join(paths.root, paths.src, paths.img, '/**/*.{jpg,png,gif,svg}'), ['img']);
 	gulp.watch([
-		path.join(paths.root, paths.data, '/**/*'),
-		path.join(paths.root, paths.layouts, '/**/*'),
-		path.join(paths.root, paths.partials, '/**/*')
+		path.join(paths.root, paths.src, paths.data, '/**/*'),
+		path.join(paths.root, paths.src, paths.layouts, '/**/*'),
+		path.join(paths.root, paths.src, paths.partials, '/**/*')
 	], ['html']);
 
 	gulp.watch(path.join(paths.root, paths.build, '/**/*'), function (event) {
