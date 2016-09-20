@@ -1,10 +1,12 @@
 const gulp    = require('gulp'),
+      clear   = require('./tasks/clear'),
+      copy    = require('./tasks/copy'),
       css     = require('./tasks/css'),
+      deploy  = require('./tasks/deploy'),
+      favicon = require('./tasks/favicon'),
       html    = require('./tasks/html'),
       img     = require('./tasks/img'),
       js      = require('./tasks/js'),
-      favicon = require('./tasks/favicon'),
-      deploy  = require('./tasks/deploy'),
       serve   = require('./tasks/serve'),
       config  = require('./config');
 
@@ -15,6 +17,8 @@ gulp.task('dev', function (done) {
       done();
 });
 
+gulp.task('clear', clear);
+gulp.task('copy', copy);
 gulp.task('css', css);
 gulp.task('html', html);
 gulp.task('img', img);
@@ -23,4 +27,4 @@ gulp.task('favicon', favicon);
 gulp.task('serve', ['dev', 'default'], serve);
 gulp.task('deploy', ['default', 'favicon'], deploy);
 
-gulp.task('default', ['html', 'css', 'js', 'img']);
+gulp.task('default', ['clear', 'copy', 'html', 'css', 'js', 'img']);

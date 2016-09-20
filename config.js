@@ -5,6 +5,7 @@ module.exports = {
         root: __dirname,
         src: 'src',
         build: 'build',
+        tmp: 'tmp',
         data: 'data',
         layouts: 'layouts',
         partials: 'layouts/partials',
@@ -25,5 +26,5 @@ module.exports = {
     ],
     stylecow: require('./stylecow.json'),
     webpack: require('./webpack.config'),
-    favicon: require('./favicon.config')
+    favicon: require('./faviconDescription.json')
 };

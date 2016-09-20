@@ -1,21 +1,26 @@
-const gulp     = require('gulp'),
-      path     = require('path'),
-      config   = require('../config'),
-      paths    = config.paths;
+'use strict';
+
+const metalsmith = require('metalsmith'),
+    filter       = require('metalsmith-filter'),
+    path         = require('path'),
+    config       = require('../config'),
+    paths        = config.paths;
 
 /**
  * EXPORTS
  */
 module.exports = function (done) {
-  config.copy.forEach(function (file) {
-    gulp
-      .src(path.join(paths.root, paths.src, file))
-      .on('error', function (error) {
-        console.error(error);
-        this.emit('end');
-      })
-      .pipe(gulp.dest(path.join(paths.root, paths.build)));
-  });
-
-  done();
+    metalsmith(path.join(paths.root))
+        .source(paths.src)
+        .use(filter(config.copy))
+        .destination(paths.build)
+        .clean(false)
+        .build(function(err) {
+            if (err) {
+                console.error(err);
+            }
+            if (done) {
+                done();
+            }
+        });
 };
