@@ -15,4 +15,15 @@ require([
         modal.init($('#modal'), $links);
         settings.init($('#about-link'));
     });
+
+    handleOffline();
+    $(window).on('online offline', handleOffline);
+
+    function handleOffline () {
+        if (navigator.onLine) {
+            $('html').removeClass('is-offline');
+        } else {
+            $('html').addClass('is-offline');
+        }
+    }
 });

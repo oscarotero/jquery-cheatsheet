@@ -7,6 +7,7 @@
     "jquery": "^3.1",
     "magnific-popup": "*",
     "selectize": "0.12.2",
-    "apache-server-configs": "^2.14.0"
+    "apache-server-configs": "^2.14.0",
+    "sw-toolbox": "^3.2.1"
   }
 }

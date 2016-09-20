@@ -581,3 +581,29 @@ fieldset, iframe {
         }
     }
 }
+
+/* Offline */
+html.is-offline {
+    --offline-color: #C00;
+
+    border-top: solid 3px var(--offline-color);
+
+    .main-header {
+        h1 {
+            &::after {
+                content: "Offline";
+                display: inline-block;
+                font-size: .8em;
+                background: var(--offline-color);
+                color: white;
+                padding: .3em;
+                border-radius: 3px;
+                text-transform: uppercase;
+                margin-left: .5em;
+            }
+        }
+    }
+    .main-content section ul li a {
+        pointer-events: none;
+    }
+}

@@ -22,7 +22,8 @@ module.exports = {
     },
     copy: [
         'jquery.pdf',
-        'jquery.png'
+        'jquery.png',
+        'sw.js',
     ],
     stylecow: require('./stylecow.json'),
     webpack: require('./webpack.config'),
