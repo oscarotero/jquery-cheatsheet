@@ -18,12 +18,13 @@ module.exports = {
         description: 'jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero',
         author: 'Oscar Otero - https://oscarotero.com',
         keywords: 'jQuery, javascript, cheatsheet, api, resource, web developer',
-        twitter: '@misteroom',
+        twitter: '@misteroom'
     },
     copy: [
-        'jquery.pdf',
-        'jquery.png',
-        'sw.js',
+        'src/jquery.pdf',
+        'src/jquery.png',
+        'src/sw.js',
+        'bower_components/sw-toolbox/sw-toolbox.js'
     ],
     stylecow: require('./stylecow.json'),
     webpack: require('./webpack.config'),

@@ -32,9 +32,9 @@ https://oscarotero.com
         <meta name="twitter:description" content="{{description}}">
         <meta name="twitter:image" content="{{url 'jquery.png'}}">
 
-        <link rel="stylesheet" href="{{url 'css/styles.css'}}" type="text/css" media="screen">
-        <link rel="stylesheet" href="{{url 'css/styles-print.css'}}" type="text/css" media="print">
-        <script type="text/javascript" src="{{url 'js/main.js'}}"></script>
+        <link rel="stylesheet" href="{{css 'styles.css'}}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{{css 'styles-print.css'}}" type="text/css" media="print">
+        <script type="text/javascript" src="{{js 'main.js'}}"></script>
         <script>
           if (document.childNodes[1].nodeType === 8) {
             console.log(document.childNodes[1].nodeValue);
@@ -168,4 +168,12 @@ https://oscarotero.com
         var _paq=_paq || [];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),_paq.push(["disableCookies"]),function(){var e="//piwik.oscarotero.com/";_paq.push(["setTrackerUrl",e+"piwik.php"]),_paq.push(["setSiteId",1]);var a=document,p=a.createElement("script"),r=a.getElementsByTagName("script")[0];p.type="text/javascript",p.async=!0,p.defer=!0,p.src=e+"piwik.js",r.parentNode.insertBefore(p,r)}()
     </script>
     <noscript><p><img src="//piwik.oscarotero.com/piwik.php?idsite=1" style=border:0 alt=""></p></noscript>
+
+    <script>
+        try {
+            navigator.serviceWorker.register('{{url 'sw.js'}}');
+        } catch (err) {
+            console.error(err);
+        }
+    </script>
 </html>

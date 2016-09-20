@@ -1,11 +1,13 @@
-importScripts('js/sw.js');
+self.importScripts('sw-toolbox.js');
 
-toolbox.precache([
-	'/',
-	'/css/styles.css',
-	'/css/styles-print.css',
-	'/js/1.1.js',
-	'/js/main.js',
-]);
+self.toolbox.options.debug = true;
 
-toolbox.router.get('/', toolbox.networkFirst);
+self.toolbox.router.default = self.toolbox.fastest;
+
+self.addEventListener('install', function (event) {
+	event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener('activate', function (event) {
+	event.waitUntil(self.clients.claim());
+});
