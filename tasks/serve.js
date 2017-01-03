@@ -13,21 +13,43 @@ const sync = require('browser-sync').create(),
  * EXPORTS
  */
 module.exports = function (done) {
-    sync.watch(path.join(paths.root, paths.src, paths.js, '/**'), () => js());
-    sync.watch(path.join(paths.root, paths.src, paths.css, '/**'), () => css());
-    sync.watch(path.join(paths.root, paths.src, paths.img, '/**'), () => img());
-    sync.watch([
-        path.join(paths.root, paths.src, paths.data, '/**'),
-        path.join(paths.root, paths.src, paths.layouts, '/**'),
-        path.join(paths.root, paths.src, paths.partials, '/**')
-    ], () => html());
+    let watchOptions = {
+        cwd: paths.root,
+        ignoreInitial: true,
+        ignored: '.DS_Store'
+    };
 
-    sync.watch(path.join(paths.root, paths.build, '/**'), function (event, file) {
-        sync.reload(path.basename(file));
+    sync.watch('**', watchOptions, function (event, file) {
+        if (file.indexOf(paths.build) === 0) {
+            return sync.reload(path.basename(file));
+        }
+
+        if (file.indexOf(path.join(paths.src, paths.js)) === 0) {
+            return js();
+        }
+
+        if (file.indexOf(path.join(paths.src, paths.css)) === 0) {
+            return css();
+        }
+
+        if (file.indexOf(path.join(paths.src, paths.img)) === 0) {
+            return img();
+        }
+
+        if (file.indexOf(path.join(paths.src, paths.data)) === 0) {
+            return html();
+        }
+
+        if (file.indexOf(paths.src) === 0) {
+            return html(undefined, {all: true});
+        }
     });
 
     sync.init({
-        server: path.join(paths.root, paths.build)
+        server: path.join(paths.root, paths.build),
+        watchOptions: watchOptions,
+        reloadOnRestart: true,
+        open: false
     }, function () {
         if (done) {
             done();

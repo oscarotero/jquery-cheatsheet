@@ -2,7 +2,7 @@
   "name": "jquery-cheatsheet",
   "homepage": "http://oscarotero.com/jquery",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.7.2",
     "bower-webpack-plugin": "^0.1.9",
     "browser-sync": "^2.10.1",
@@ -16,11 +16,11 @@
     "metalsmith": "^2.1.0",
     "metalsmith-changed": "^3.1.0",
     "metalsmith-html-minifier": "^2.1.0",
-    "metalsmith-imagemin": "^2.0.0",
+    "metalsmith-imagemin": "^3.0.0",
     "metalsmith-layouts": "^1.4.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.5.0",
-    "rsync": "^0.5.0",
+    "rsync": "^0.6.0",
     "webpack": "^1.12.9"
   },
   "scripts": {

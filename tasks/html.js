@@ -13,66 +13,54 @@ const metalsmith = require('metalsmith'),
     paths        = config.paths;
 
 /**
- * HELPERS
- */
-handlebars.registerHelper('itemOptionData', function (type) {
-  var data = { 
-    sort: this.text.replace(/[^\w]/, ''),
-    from: this.from,
-    type: type
-  };
-
-  if (this.deprecated) {
-    data.deprecated = this.deprecated;
-  }
-
-  if (this.removed) {
-    data.removed = this.removed;
-  }
-
-  return JSON.stringify(data);
-});
-
-handlebars.registerHelper('itemClass', function () {
-  var className = 'v' + (this.from.replace('.', '-')) + ' ' + (this.doc.replace('.', '-'));
-
-  if (this.deprecated) {
-    className += ' v' + (this.deprecated.replace('.', '-')) + '-d';
-  }
-
-  if (this.removed) {
-    className += ' v' + (this.removed.replace('.', '-')) + '-r';
-  }
-
-  return className;
-});
-
-handlebars.registerHelper('reverse', function (array) {
-  array.reverse();
-  return array;
-});
-
-/**
  * EXPORTS
  */
-module.exports = function (done) {
-    const publicPath = url.parse(config.url || '/').pathname;
+module.exports = function (done, options) {
+    options = options || {};
+    let publicPath = url.parse(config.url || '/').pathname;
 
-    handlebars.registerHelper('url', function (file) {
-        return path.join(publicPath, file);
+    //Handlerbars helpers
+    handlebars.registerHelper('itemOptionData', function (type) {
+      var data = { 
+        sort: this.text.replace(/[^\w]/, ''),
+        from: this.from,
+        type: type
+      };
+
+      if (this.deprecated) {
+        data.deprecated = this.deprecated;
+      }
+
+      if (this.removed) {
+        data.removed = this.removed;
+      }
+
+      return JSON.stringify(data);
     });
 
-    handlebars.registerHelper('js', function (file) {
-        return path.join(publicPath, paths.js, file);
+    handlebars.registerHelper('itemClass', function () {
+      var className = 'v' + (this.from.replace('.', '-')) + ' ' + (this.doc.replace('.', '-'));
+
+      if (this.deprecated) {
+        className += ' v' + (this.deprecated.replace('.', '-')) + '-d';
+      }
+
+      if (this.removed) {
+        className += ' v' + (this.removed.replace('.', '-')) + '-r';
+      }
+
+      return className;
     });
 
-    handlebars.registerHelper('css', function (file) {
-        return path.join(publicPath, paths.css, file);
+    handlebars.registerHelper('reverse', function (array) {
+      array.reverse();
+      return array;
     });
 
-    handlebars.registerHelper('img', function (file) {
-        return path.join(publicPath, paths.img, file);
-    });
+    handlebars.registerHelper('url', (file) => path.join(publicPath, file));
+    handlebars.registerHelper('js', (file) => path.join(publicPath, paths.js, file));
+    handlebars.registerHelper('css', (file) => path.join(publicPath, paths.css, file));
+    handlebars.registerHelper('img', (file) => path.join(publicPath, paths.img, file));
 
     metalsmith(paths.root)
         .metadata(config.metadata || {})
@@ -94,7 +82,7 @@ module.exports = function (done) {
                 requires.handlebars = handlebars;
             }
         }))
-        .use(ifProd(minifier({
+        .use(ifTrue(!config.dev, minifier({
             removeComments: false,
         })))
         .build(function(err) {
@@ -107,8 +95,8 @@ module.exports = function (done) {
         });
 };
 
-function ifProd (cb) {
-    if (!config.dev) {
+function ifTrue (condition, cb) {
+    if (condition) {
         return cb;
     }
 

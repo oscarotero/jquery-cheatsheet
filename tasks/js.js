@@ -10,7 +10,7 @@ const url   = require('url'),
  * EXPORTS
  */
 module.exports = function (done) {
-    if (config.dev) {
+    if (!config.dev) {
         config.webpack.plugins = config.webpack.plugins.concat(
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.UglifyJsPlugin()
