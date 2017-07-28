@@ -1,6 +1,6 @@
 @import "//fonts.googleapis.com/css?family=Droid+Sans:regular,bold";
 @import "normalize.css";
-@import "selectize";
+@import "../../node_modules/selectize/dist/css/selectize.css";
 @import "magnific-popup";
 
 /* Variables */

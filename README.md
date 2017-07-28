@@ -10,8 +10,6 @@ http://oscarotero.com/jquery/
 Installation:
 -------------
 
-Requires node >= 4
-
 ```
 $ git clone https://github.com/oscarotero/jquery-cheatsheet.git
 $ cd jquery-cheatsheet

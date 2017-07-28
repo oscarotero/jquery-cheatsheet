@@ -53,7 +53,7 @@ define([
             });
 
             //Modal menu
-            $menu = $modal.find('> ul a');
+            var $menu = $modal.find('> ul a');
 
             $menu.on('click', function (e) {
                 var $this = $(this);

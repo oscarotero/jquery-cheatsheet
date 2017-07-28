@@ -1,30 +1,61 @@
-const gulp    = require('gulp'),
-      clear   = require('./tasks/clear'),
-      copy    = require('./tasks/copy'),
-      css     = require('./tasks/css'),
-      deploy  = require('./tasks/deploy'),
-      favicon = require('./tasks/favicon'),
-      html    = require('./tasks/html'),
-      img     = require('./tasks/img'),
-      js      = require('./tasks/js'),
-      serve   = require('./tasks/serve'),
-      config  = require('./config');
+const gulp = require('gulp');
+const zume = require('zume').create();
+const rsync = require('rsync');
 
+gulp.task('clear', () => zume.clear());
 
-gulp.task('dev', function (done) {
-      config.dev = true;
-      config.url = 'http://localhost:3000';
-      done();
+gulp.task('html', done => {
+    zume.html()
+        .frontMatter({
+              title: 'jQuery Cheat Sheet',
+              description: 'jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero',
+              author: 'Oscar Otero - https://oscarotero.com',
+              keywords: 'jQuery, javascript, cheatsheet, api, resource, web developer',
+              twitter: '@misteroom'
+          })
+        .markdown()
+        .permalink()
+        .ejs()
+        .dest(done);
 });
 
-gulp.task('clear', clear);
-gulp.task('copy', copy);
-gulp.task('css', css);
-gulp.task('html', html);
-gulp.task('img', img);
-gulp.task('js', js);
-gulp.task('favicon', favicon);
-gulp.task('serve', ['dev', 'default'], serve);
-gulp.task('deploy', ['default', 'favicon'], deploy);
+gulp.task('css', done => {
+    zume.css()
+        .stylecow()
+        .dest(done);
+});
 
-gulp.task('default', ['clear', 'copy', 'html', 'css', 'js', 'img']);
+gulp.task('js', done => {
+    zume.js()
+        .webpack()
+        .dest(done);
+});
+
+gulp.task('img', done => {
+    zume.img()
+        .dest(done);
+});
+
+gulp.task('files', done => {
+    zume.files({ pattern: 'files/**' })
+        .dest(done);
+});
+
+gulp.task('deploy', ['default'], done => {
+    const deploy = new rsync()
+        .shell('ssh')
+        .source(zume.dest('**'))
+        .recursive()
+        .destination('oscarotero.com:~/www/jquery');
+
+    deploy.execute(error => {
+        if (error) {
+            console.error(error);
+        }
+
+        done();
+    });
+});
+
+gulp.task('server', ['default'], () => zume.serve());
+gulp.task('default', ['clear', 'files', 'html', 'css', 'js', 'img']);

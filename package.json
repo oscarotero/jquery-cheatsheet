@@ -2,30 +2,19 @@
   "name": "jquery-cheatsheet",
   "homepage": "http://oscarotero.com/jquery",
   "private": true,
-  "dependencies": {
-    "bower": "^1.7.2",
-    "bower-webpack-plugin": "^0.1.9",
-    "browser-sync": "^2.10.1",
-    "del": "^2.2.2",
-    "eslint": "^3.5.0",
+  "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-real-favicon": "^0.2.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-stylecow": "^3.1.1",
-    "handlebars": "^4.0.5",
-    "metalsmith": "^2.1.0",
-    "metalsmith-changed": "^3.1.0",
-    "metalsmith-html-minifier": "^2.1.0",
-    "metalsmith-imagemin": "^3.0.0",
-    "metalsmith-layouts": "^1.4.1",
-    "metalsmith-markdown": "^0.2.1",
-    "metalsmith-permalinks": "^0.5.0",
     "rsync": "^0.6.0",
-    "webpack": "^1.12.9"
+    "zume": "^0.9.1"
   },
   "scripts": {
-    "install": "bower install",
-    "start": "gulp serve",
-    "lint": "eslint tasks src/js"
+    "start": "gulp server"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "magnific-popup": "^1.1.0",
+    "normalize.css": "^7.0.0",
+    "selectize": "^0.12.4",
+    "sw-toolbox": "^3.6.0"
   }
 }
