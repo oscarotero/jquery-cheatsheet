@@ -5,7 +5,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "rsync": "^0.6.0",
-    "zume": "^0.9.1"
+    "zume": "^0.10.0"
   },
   "scripts": {
     "start": "gulp server"
