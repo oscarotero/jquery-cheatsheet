@@ -1,5 +1,7 @@
 const gulp = require('gulp');
-const zume = require('zume').create();
+const zume = require('zume').create({
+    paths: { url: 'https://oscarotero.com/jquery/'}
+});
 const rsync = require('rsync');
 
 gulp.task('clear', () => zume.clear());
@@ -16,6 +18,7 @@ gulp.task('html', done => {
         .markdown()
         .permalink()
         .ejs()
+        .urls()
         .dest(done);
 });
 
