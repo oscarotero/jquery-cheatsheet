@@ -1,5 +1,5 @@
 const zume = require('zume').create({
-    paths: { url: 'https://oscarotero.com/jquery/'}
+    url: 'https://oscarotero.com/jquery/'
 });
 const gulp = zume.gulp();
 const rsync = require('rsync');
