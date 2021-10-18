@@ -1,12 +1,12 @@
-const gulp = require('gulp');
 const zume = require('zume').create({
     paths: { url: 'https://oscarotero.com/jquery/'}
 });
+const gulp = zume.gulp();
 const rsync = require('rsync');
 
 gulp.task('clear', () => zume.clear());
 
-gulp.task('html', done => {
+gulp.task('html', () =>
     zume.html()
         .frontMatter({
               title: 'jQuery Cheat Sheet',
@@ -19,32 +19,34 @@ gulp.task('html', done => {
         .permalink()
         .ejs()
         .urls()
-        .dest(done);
-});
+        .dest()
+);
 
-gulp.task('css', done => {
+gulp.task('css', () =>
     zume.css()
-        .stylecow()
-        .dest(done);
-});
+        .postcss()
+        .dest()
+);
 
-gulp.task('js', done => {
+gulp.task('js', () =>
     zume.js()
         .webpack()
-        .dest(done);
-});
+        .dest()
+);
 
-gulp.task('img', done => {
+gulp.task('img', () =>
     zume.img()
-        .dest(done);
-});
+        .dest()
+);
 
-gulp.task('files', done => {
+gulp.task('files', () =>
     zume.files({ pattern: 'files/**' })
-        .dest(done);
-});
+        .dest()
+);
 
-gulp.task('deploy', ['default'], done => {
+gulp.task('default', gulp.series('clear', 'files', 'html', 'css', 'js', 'img'));
+gulp.task('server', gulp.series('default', () => zume.serve()));
+gulp.task('deploy', gulp.series('default', (done) => {
     const deploy = new rsync()
         .shell('ssh')
         .source(zume.dest('**'))
@@ -58,7 +60,4 @@ gulp.task('deploy', ['default'], done => {
 
         done();
     });
-});
-
-gulp.task('server', ['default'], () => zume.serve());
-gulp.task('default', ['clear', 'files', 'html', 'css', 'js', 'img']);
+}));

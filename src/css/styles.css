@@ -7,8 +7,10 @@
 :root {
     --black: #1B1B1B;
     --gray: #777;
-    --light-gray: #BFBFBF;
+    --gray-light: #BFBFBF;
+    --gray-xlight: #EFEFEF;
 
+    --dark: rgba(0,0,0,0.85);
     --yellow: #FFDD3A;
     --orange: #FFA03C;
     --red: #E45B5B;
@@ -48,7 +50,7 @@ fieldset, iframe {
     left: 0;
     width: 100%;
 
-    a {
+    & a {
         color: inherit;
         text-decoration: none;
 
@@ -57,49 +59,49 @@ fieldset, iframe {
         }
     }
 
-    h1 {
+    & h1 {
         font-size: .9rem;
         font-weight: normal;
         padding: 0;
         margin: 0;
         white-space: nowrap;
 
-        strong {
+        & strong {
             color: white;
         }
         
     }
 
-    .filter-group {
+    & .filter-group {
         margin: .5em 0;
         max-width: 400px;
     }
 
-    .filter {
-        .selectize-input {
+    & .filter {
+        & .selectize-input {
             padding: .5rem 1rem;
             display: block !important;
             border: none;
             border-radius: 0;
-            background: var(--light-gray);
+            background: var(--gray-light);
 
             &:hover {
                 background: white;
             }
         }
-        .selectize-dropdown,
-        .selectize-dropdown-content {
+        & .selectize-dropdown,
+        & .selectize-dropdown-content {
             border: none;
             border-radius: 0 0 6px 6px;
         }
-        .selectize-dropdown {
+        & .selectize-dropdown {
             color: var(--gray);
 
-            .active {
-                background: color(var(--light-gray) tint(85));
+            & .active {
+                background: var(--gray-xlight);
             }
 
-            .highlight {
+            & .highlight {
                 color: var(--black);
                 background: none;
                 text-decoration: underline;
@@ -107,18 +109,18 @@ fieldset, iframe {
         }
     }
 
-    .filter-version {
+    & .filter-version {
         width: 100%;
 
-        .selectize-input {
+        & .selectize-input {
             border-radius: 6px 6px 0 0;
         }
     }
-    .filter-search {
+    & .filter-search {
         width: 100%;
         margin-top: 2px;
 
-        .selectize-input {
+        & .selectize-input {
             border-radius: 0 0 6px 6px;
             cursor: text !important;
 
@@ -128,17 +130,17 @@ fieldset, iframe {
             }
         }
 
-        .selectize-dropdown-content {
+        & .selectize-dropdown-content {
             padding: 0;
 
-            .option {
+            & .option {
                 border-left-style: solid;
                 border-left-width: 8px;
             }
         }
     }
 
-    .about {
+    & .about {
         font-size: 0.9rem;
         outline: 0;
     }
@@ -148,22 +150,22 @@ fieldset, iframe {
         justify-content: space-between;
         align-items: center;
 
-        .about {
+        & .about {
             display: block;
             padding: 0 1rem;
         }
 
-        .filter-group {
+        & .filter-group {
             width: 100%;
             max-width: 30rem;
             margin: 0 2rem;
             display: flex;
 
-            .filter-version {
+            & .filter-version {
                 margin-right: 2px;
                 width: 8rem;
 
-                .selectize-input {
+                & .selectize-input {
                     border-radius: 6px 0 0 6px;
 
                     &.dropdown-active {
@@ -171,9 +173,9 @@ fieldset, iframe {
                     }
                 }
             }
-            .filter-search {
+            & .filter-search {
                 margin-top: 0;
-                .selectize-input {
+                & .selectize-input {
                     border-radius: 0 6px 6px 0;
 
                     &.dropdown-active {
@@ -191,18 +193,18 @@ fieldset, iframe {
     display: flex;
     flex-wrap: wrap;
 
-    article {
+    & article {
         flex-shrink: 0;
         flex-grow: 1;
         background: white;
         margin-right: 1px;
         margin-bottom: 1px;
 
-        h1 {
+        & h1 {
             font-size: .9em;
             margin: 0;
             padding: .5rem 1rem;
-            background: color(black a(.1));
+            background: rgba(0,0,0,0.1);
             text-transform: uppercase;
 
             @media (--desktop) {
@@ -210,38 +212,38 @@ fieldset, iframe {
             }
         }
 
-        a {
+        & a {
             color: inherit;
         }
         
-        > div {
+        & > div {
             padding: 1rem;
 
-            div {
+            & div {
                 min-width: 100px;
             }
 
-            section {
+            & section {
                 margin-top: .8rem;
             }
         }
     }
 
-    section {
-        h2 {
+    & section {
+        & h2 {
             font-size: 0.9rem;
             line-height: 1em;
             margin: 0 0 .2em 0;
         }
 
-        ul {
+        & ul {
             font-size: 0.8rem;
             line-height: 1em;
             list-style: none;
             margin: 0;
             padding: 0;
 
-            li a {
+            & li a {
                 text-decoration: none;
                 display: block;
                 padding: .15em .5em;
@@ -252,31 +254,31 @@ fieldset, iframe {
                 }
             }
         }
-        h2.deactivate,
-        a.deactivate,
-        a.old-version {
+        & h2.deactivate,
+        & a.deactivate,
+        & a.old-version {
             opacity: 0.3;
         }
-        a.removed {
+        & a.removed {
             text-decoration: line-through;
         }
     }
 
     @media (--tablet) {
-        article > div {
+        & article > div {
             display: flex;
             flex-shrink: 0;
             align-content: flex-start;
 
-            > div {
+            & > div {
                 flex-grow: 1;
             }
 
-            > div + div {
+            & > div + div {
                 margin-left: 1rem;
             }
 
-            section:first-child {
+            & section:first-child {
                 margin-top: 0;
             }
         }
@@ -294,13 +296,13 @@ fieldset, iframe {
 /* SELECTORS theme */
 .selectors {
     --color: var(--yellow);
-    --dark: color(var(--color) lightness(10%));
+    --dark: rgba(0,0,0,0.85);
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -314,13 +316,12 @@ fieldset, iframe {
 /* ATTRIBUTES theme */
 .attributes {
     --color: var(--orange);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -334,13 +335,12 @@ fieldset, iframe {
 /* MANIPULATION theme */
 .manipulation {
     --color: var(--red);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -354,13 +354,12 @@ fieldset, iframe {
 /* TRAVERSING theme */
 .traversing {
     --color: var(--pink);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -374,13 +373,12 @@ fieldset, iframe {
 /* EVENTS theme */
 .events {
     --color: var(--blue);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -394,13 +392,12 @@ fieldset, iframe {
 /* EFFECTS theme */
 .effects {
     --color: var(--turquoise);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -414,13 +411,12 @@ fieldset, iframe {
 /* AJAX theme */
 .ajax {
     --color: var(--green);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -434,13 +430,12 @@ fieldset, iframe {
 /* CORE theme */
 .core {
     --color: var(--lemon);
-    --dark: color(var(--color) lightness(10%));
 
-    &article {
+    @nest article& {
         background: var(--color);
         color: var(--dark);
 
-        a:hover {
+        & a:hover {
             background: var(--dark);
             color: var(--color);
         }
@@ -455,17 +450,17 @@ fieldset, iframe {
 
 /* Popups */
 .mfp-bg {
-    background: color(black alpha(0.5));
+    background: rgba(0,0,0,0.5);
 }
 .mfp-content {
     background: white;
-    box-shadow: 0 0 10px color(black a(.3));
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 .modal-doc {
-    .mfp-container {
+    & .mfp-container {
         padding: 0;
 
-        .mfp-content {
+        & .mfp-content {
             width: calc(100% - 40px);
             height: calc(100% - 40px);
             background: white;
@@ -474,33 +469,33 @@ fieldset, iframe {
 }
 
 .modal-about {
-    .mfp-content {
+    & .mfp-content {
         max-width: 400px;
     }
-    fieldset {
+    & fieldset {
         padding: 1rem;
     }
 
-    h4 {
+    & h4 {
         margin: 0 0 1rem 0;
     }
-    label {
+    & label {
         font-size: 0.8em;
         padding: 5px 0;
         display: block;
 
-        > input {
+        & > input {
             margin-right: .3em;
         }
     }
     
-    p {
+    & p {
         padding: 1rem;
         font-size: 0.8rem;
-        border-top: solid 1px color(var(--black) tint(90%));
+        border-top: solid 1px var(--gray-light);
         margin: 0;
 
-        a {
+        & a {
             color: inherit;
 
             &:hover {
@@ -519,25 +514,25 @@ fieldset, iframe {
     display: flex;
     flex-direction: column;
 
-    ul {
+    & ul {
         list-style: none;
         margin: 0 0 5px 0;
         padding: 0;
         display: flex;
         font-size: 0.8rem;
 
-        li {
+        & li {
             margin-right: 5px;
         }
 
-        a {
+        & a {
             display: block;
             color: black;
             padding: 0.5em 1em;
             text-decoration: none;
 
             &:hover {
-                background: color(black tint(90));
+                background: var(--gray-xlight);
             }
 
             &.selected {
@@ -546,39 +541,17 @@ fieldset, iframe {
             }
         }
     }
-    > div {
+    & > div {
         flex-grow: 1;
         position: relative;
     }
 
-    iframe {
+    & iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-    }
-}
-
-.ads {
-    > a {
-        font-size: 0.8em;
-        display: inline-block;
-        padding: 0.5rem;
-        color: color(black tint(40));
-        text-decoration: none;
-
-        strong {
-            font-weight: normal;
-            text-decoration: underline;
-            color: color(black tint(80));
-        }
-
-        &::after {
-            content: "[ad]";
-            font-size: 0.8em;
-            color: color(black tint(20));
-        }
     }
 }
 
@@ -588,8 +561,8 @@ html.is-offline {
 
     border-top: solid 3px var(--offline-color);
 
-    .main-header {
-        h1 {
+    & .main-header {
+        & h1 {
             &::after {
                 content: "Offline";
                 display: inline-block;
@@ -603,7 +576,7 @@ html.is-offline {
             }
         }
     }
-    .main-content section ul li a {
+    & .main-content section ul li a {
         pointer-events: none;
     }
 }

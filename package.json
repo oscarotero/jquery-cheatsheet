@@ -3,9 +3,8 @@
   "homepage": "http://oscarotero.com/jquery",
   "private": true,
   "devDependencies": {
-    "gulp": "^3.9.0",
     "rsync": "^0.6.0",
-    "zume": "^0.10.0"
+    "zume": "^2.2.0"
   },
   "scripts": {
     "start": "gulp server"
