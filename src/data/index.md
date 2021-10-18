@@ -90,6 +90,22 @@ versions:
     value: "3.0"
     source: "git"
 
+  - name:  "3.2"
+    value: "3.2"
+    source: ""
+
+  - name:  "3.3"
+    value: "3.3"
+    source: ""
+
+  - name:  "3.4"
+    value: "3.4"
+    source: ""
+
+  - name:  "3.5"
+    value: "3.5"
+    source: ""
+
 sections:
   - title: Selectors
     slug: selectors
@@ -159,21 +175,25 @@ sections:
             title: Select the element at index n within the matched set.
             doc: eq-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :even
             title: "Selects even elements, zero-indexed. See also odd."
             doc: even-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :first
             title: Selects the first matched element.
             doc: first-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :gt()
             title: Select all elements at an index greater than index within the matched set.
             doc: gt-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :header
             title: "Selects all elements that are headers, like h1, h2, h3 and so on."
@@ -189,11 +209,13 @@ sections:
             title: Selects the last matched element.
             doc: last-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :lt()
             title: Select all elements at an index less than index within the matched set.
             doc: lt-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :not()
             title: Selects all elements that do not match the given selector.
@@ -204,6 +226,7 @@ sections:
             title: "Selects odd elements, zero-indexed. See also even."
             doc: odd-selector
             from: "1.0"
+            deprecated: "3.4"
 
           - text: :root
             title: Selects the element that is the root of the document.
@@ -868,6 +891,7 @@ sections:
             src: jQuery.fn.andSelf
             from: "1.2"
             deprecated: "1.8"
+            removed: "3.0"
 
           - text: .contents()
             title: "Get the children of each element in the set of matched elements, including text and comment nodes."
@@ -1656,6 +1680,7 @@ sections:
             doc: jQuery.holdReady
             src: jQuery.holdReady
             from: "1.6"
+            deprecated: "3.2"
 
           - text: jQuery.when()
             title: "Provides a way to execute callback functions based on one or more objects, usually Deferred objects that represent asynchronous events."
@@ -1824,6 +1849,7 @@ sections:
             doc: jQuery.isArray
             src: jQuery.isArray
             from: "1.3"
+            deprecated: "3.2"
 
           - text: jQuery.isEmptyObject()
             title: Check to see if an object is empty (contains no properties).
@@ -1836,12 +1862,14 @@ sections:
             doc: jQuery.isFunction
             src: jQuery.isFunction
             from: "1.2"
+            deprecated: "3.3"
 
           - text: jQuery.isNumeric()
             title: Determines whether its argument is a number.
             doc: jQuery.isNumeric
             src: jQuery.isNumeric
             from: "1.7"
+            deprecated: "3.3"
 
           - text: jQuery.isPlainObject()
             title: "Check to see if an object is a plain object (created using '{}' or 'new Object')."
@@ -1854,6 +1882,7 @@ sections:
             doc: jQuery.isWindow
             src: jQuery.isWindow
             from: "1.4.3"
+            deprecated: "3.3"
 
           - text: jQuery.isXMLDoc()
             title: Check to see if a DOM node is within an XML document (or is an XML document).
@@ -1890,6 +1919,7 @@ sections:
             doc: jQuery.now
             src: jQuery.now
             from: "1.4.3"
+            deprecated: "3.3"
 
           - text: jQuery.parseHTML()
             title: Parses a string into an array of DOM nodes.
@@ -1915,6 +1945,7 @@ sections:
             doc: jQuery.proxy
             src: jQuery.proxy
             from: "1.4"
+            deprecated: "3.3"
 
           - text: jQuery.support
             title: A collection of properties that represent the presence of different browser features or bugs.
@@ -1928,12 +1959,14 @@ sections:
             doc: jQuery.trim
             src: jQuery.trim
             from: "1.0"
+            deprecated: "3.5"
 
           - text: jQuery.type()
             title: "Determine the internal JavaScript [[Class]] of an object."
             doc: jQuery.type
             src: jQuery.type
             from: "1.4.3"
+            deprecated: "3.3"
 
           - text: jQuery.unique()
             title: "Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers."
@@ -1971,6 +2004,7 @@ sections:
             src: jQuery.fn.size
             from: "1.0"
             deprecated: "1.8"
+            removed: "3.0"
 
           - text: .toArray()
             title: "Retrieve all the DOM elements contained in the jQuery set, as an array."
