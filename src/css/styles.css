@@ -293,6 +293,15 @@ fieldset, iframe {
     }
 }
 
+.main-content {
+    &.hide-removed a.removed {
+        display: none;
+    }
+    &.hide-deprecated a.old-version {
+        display: none;
+    }
+}
+
 /* SELECTORS theme */
 .selectors {
     --color: var(--yellow);

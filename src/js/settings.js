@@ -4,7 +4,9 @@ define([
 ], function ($) {
     var settings = {
         open_links: 'modal-window',
-        layout: 'horizontal'
+        layout: 'horizontal',
+        hide_removed: 'hide_removed',
+        hide_deprecated: 'hide_deprecated'
     };
 
     return {
@@ -29,6 +31,23 @@ define([
                 localStorage.setItem('settings', JSON.stringify(settings));
             });
 
+            $settings.find(':checkbox').click(function () {
+                var $this = $(this);
+                var name = $this.attr('name');
+
+                settings[name] = $this.is(':checked');
+
+                if (name === 'hide_removed') {
+                    hide(name, settings[name]);
+                }
+
+                if (name === 'hide_deprecated') {
+                    hide(name, settings[name]);
+                }
+
+                localStorage.setItem('settings', JSON.stringify(settings));
+            });
+
             var savedSettings = localStorage.getItem('settings');
 
             if (savedSettings) {
@@ -40,6 +59,16 @@ define([
 
                 if (name === 'layout') {
                     changeLayout(value);
+                }
+
+                $settings.find(':checkbox[name="' + name + '"][value="' + value + '"]').prop('checked', true);
+
+                if (name === 'hide_removed') {
+                    hide(name, settings[name]);
+                }
+
+                if (name === 'hide_deprecated') {
+                    hide(name, settings[name]);
                 }
             });
         },
@@ -55,5 +84,9 @@ define([
         } else {
             $('.main-content').removeClass('ly-horizontal').addClass('ly-vertical');
         }
+    }
+
+    function hide(name, value) {
+        $('.main-content').toggleClass(name.replace('_', '-'), value);
     }
 });
