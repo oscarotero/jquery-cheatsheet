@@ -5,8 +5,8 @@ define([
     var settings = {
         open_links: 'modal-window',
         layout: 'horizontal',
-        hide_removed: 'hide_removed',
-        hide_deprecated: 'hide_deprecated'
+        hide_removed: false,
+        hide_deprecated: false
     };
 
     return {
