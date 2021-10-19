@@ -90,6 +90,10 @@ versions:
     value: "3.0"
     source: "git"
 
+  - name:  "3.1"
+    value: "3.1"
+    source: ""
+
   - name:  "3.2"
     value: "3.2"
     source: ""
@@ -821,6 +825,12 @@ sections:
             src: jQuery.fn.eq
             from: "1.1.2"
 
+          - text: .even()
+            title: Reduce the set of matched elements to the even ones in the set, numbered from zero.
+            doc: even
+            src: jQuery.fn.even
+            from: "3.5"
+
           - text: .filter()
             title: Reduce the set of matched elements to those that match the selector or pass the function's test.
             doc: filter
@@ -862,6 +872,12 @@ sections:
             doc: not
             src: jQuery.fn.not
             from: "1.0"
+
+          - text: .odd()
+            title: Reduce the set of matched elements to the odd ones in the set, numbered from zero.
+            doc: odd
+            src: jQuery.fn.odd
+            from: "3.5"
 
           - text: .slice()
             title: Reduce the set of matched elements to a subset specified by a range of indices.
@@ -1666,6 +1682,12 @@ sections:
             doc: jQuery.noConflict
             src: jQuery.noConflict
             from: "1.0"
+
+          - text: jQuery.readyException()
+            title: "Handles errors thrown synchronously in functions wrapped in jQuery()."
+            doc: jQuery.readyException
+            src: jQuery.readyException
+            from: "3.1"
 
           - text: jQuery.sub()
             title: Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object.
