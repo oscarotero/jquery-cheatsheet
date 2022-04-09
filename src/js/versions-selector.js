@@ -1,13 +1,6 @@
 let currentVersion;
-const sources = {};
 
 export default function init($selector, $links) {
-  $selector.find("option").each(function () {
-    const $this = $(this);
-
-    sources[$this.attr("value")] = $this.data("source");
-  });
-
   $selector.selectize();
 
   $selector.change(function () {
@@ -38,8 +31,4 @@ export default function init($selector, $links) {
 
 export function getCurrent() {
   return currentVersion;
-}
-
-export function getCurrentSource() {
-  return sources[currentVersion];
 }

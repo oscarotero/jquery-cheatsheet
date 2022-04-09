@@ -56,7 +56,7 @@ https://oscarotero.com
         <div class="filter filter-version">
           <select id="version" data-placeholder="Version...">
             <% versions.forEach(version => { %>
-            <option data-source="<%= version.source %>" value="<%= version.value %>">
+            <option value="<%= version.value %>">
               <%= version.name %>
             </option>
             <% }) %>
@@ -176,7 +176,6 @@ https://oscarotero.com
     <div id="modal" class="mfp-hide">
       <ul>
         <li class="link-api"><a href="">API doc</a></li>
-        <li class="link-src"><a href="http://james.padolsey.com/jquery/" target="_blank">Source viewer</a></li>
       </ul>
       <div>
         <iframe src="about:blank"></iframe>

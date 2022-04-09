@@ -1,5 +1,4 @@
 import { getValue } from "./settings.js";
-import { getCurrentSource } from "./versions-selector.js";
 
 export default function init($modal, $links) {
   // Open links
@@ -16,16 +15,6 @@ export default function init($modal, $links) {
         e.preventDefault();
 
         $modal.find(".link-api a").attr("href", $this.attr("href")).click();
-
-        if ($this.data("src") && getCurrentSource()) {
-          $modal.find(".link-src a").show().attr(
-            "href",
-            "http://james.padolsey.com/jquery/" + getCurrentSource() + "/" +
-              $this.data("src"),
-          );
-        } else {
-          $modal.find(".link-src a").hide();
-        }
 
         $.magnificPopup.open({
           items: {
