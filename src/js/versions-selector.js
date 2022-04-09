@@ -1,52 +1,45 @@
-define([
-    'jquery',
-    'selectize',
-], function ($) {
-    var currentVersion;
-    var sources = {};
+let currentVersion;
+const sources = {};
 
-    return {
-        init: function ($selector, $links) {
-            $selector.find('option').each(function () {
-                var $this = $(this);
+export default function init($selector, $links) {
+  $selector.find("option").each(function () {
+    const $this = $(this);
 
-                sources[$this.attr('value')] = $this.data('source');
-            });
+    sources[$this.attr("value")] = $this.data("source");
+  });
 
-            $selector.selectize();
+  $selector.selectize();
 
-            $selector.change(function () {
-                var value = $selector.val();
-                var activate = false;
-                currentVersion = value;
+  $selector.change(function () {
+    const value = $selector.val();
+    let activate = false;
+    currentVersion = value;
 
-                $links.removeClass('old-version removed');
+    $links.removeClass("old-version removed");
 
-                $.each($selector.data('selectize').options, function (key, option) {
-                    if (option.value == value) {
-                        activate = true;
-                    }
+    $.each($selector.data("selectize").options, function (_, option) {
+      if (option.value == value) {
+        activate = true;
+      }
 
-                    var selector = '.v' + option.value.replace(/\./g, '-');
+      const selector = ".v" + option.value.replace(/\./g, "-");
 
-                    if (!activate) {
-                        $links.filter(selector).addClass('old-version removed');
-                    } else {
-                        $links.filter(selector + '-d').addClass('old-version'); //Deprecated
-                        $links.filter(selector + '-r').addClass('removed'); //Removed
-                    }
-                });
-            });
+      if (!activate) {
+        $links.filter(selector).addClass("old-version removed");
+      } else {
+        $links.filter(selector + "-d").addClass("old-version"); //Deprecated
+        $links.filter(selector + "-r").addClass("removed"); //Removed
+      }
+    });
+  });
 
-            $selector.change();
-        },
+  $selector.change();
+}
 
-        getCurrent: function () {
-            return currentVersion;
-        },
+export function getCurrent() {
+  return currentVersion;
+}
 
-        getCurrentSource: function () {
-            return sources[currentVersion];
-        }
-    }
-});
+export function getCurrentSource() {
+  return sources[currentVersion];
+}

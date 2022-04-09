@@ -1,5 +1,2 @@
-/bower_components
-/node_modules
-/build
-/tmp
-/faviconData.json
+_site
+src/vendor

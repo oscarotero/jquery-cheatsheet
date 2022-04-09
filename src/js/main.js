@@ -1,29 +1,23 @@
-require([
-    'jquery',
-    './versions-selector',
-    './api-search',
-    './modal',
-    './settings'
-], function ($, versions, search, modal, settings) {
-    window.jQuery = $;
-    
-    $(function () {
-        var $links = $('.main-content a');
+import "./deps.js";
+import versions from "./versions-selector.js";
+import search from "./api-search.js";
+import modal from "./modal.js";
+import settings from "./settings.js";
 
-        versions.init($('#version'), $links);
-        search.init($('#search'), $links);
-        modal.init($('#modal'), $links);
-        settings.init($('#about-link'));
-    });
+const $links = $(".main-content a");
 
-    handleOffline();
-    $(window).on('online offline', handleOffline);
+versions($("#version"), $links);
+search($("#search"), $links);
+modal($("#modal"), $links);
+settings($("#about-link"), $links);
 
-    function handleOffline () {
-        if (navigator.onLine) {
-            $('html').removeClass('is-offline');
-        } else {
-            $('html').addClass('is-offline');
-        }
-    }
-});
+handleOffline();
+$(window).on("online offline", handleOffline);
+
+function handleOffline() {
+  if (navigator.onLine) {
+    $("html").removeClass("is-offline");
+  } else {
+    $("html").addClass("is-offline");
+  }
+}

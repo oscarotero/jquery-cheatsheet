@@ -1,5 +1,9 @@
----
-template: layout.ejs
+layout: layout.eta
+title: jQuery Cheat Sheet
+description: jQuery cheat sheet in HTML with links to the original API documentation. Created by Oscar Otero
+author: Oscar Otero - https://oscarotero.com
+keywords: jQuery, javascript, cheatsheet, api, resource, web developer
+twitter: "@misteroom"
 
 versions:
   - name:  "1.0"
@@ -2142,4 +2146,3 @@ sections:
             title: Remove a callback or a collection of callbacks from a callback list.
             doc: callbacks.remove
             from: "1.7"
----
