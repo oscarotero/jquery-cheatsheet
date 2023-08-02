@@ -2,6 +2,6 @@
   "importMap": "import_map.json",
   "tasks": {
     "build": "deno run -A https://deno.land/x/lume@v1.7.2/ci.ts",
-    "serve": "deno task build -- -s"
+    "serve": "deno task build -s"
   }
 }
