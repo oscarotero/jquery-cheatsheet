@@ -32,12 +32,12 @@ https://oscarotero.com
     <meta name="twitter:description" content="<%= description %>">
     <meta name="twitter:image" content="/jquery.png">
 
-    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/styles-print.css" type="text/css" media="print">
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/Magnific-Popup/jquery.magnific-popup.js"></script>
-    <script src="vendor/selectize/selectize.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/css/styles-print.css" type="text/css" media="print">
+    <script src="/vendor/jquery/jquery.js"></script>
+    <script src="/vendor/Magnific-Popup/jquery.magnific-popup.js"></script>
+    <script src="/vendor/selectize/selectize.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script>
       if (document.childNodes[1].nodeType === 8) {
       console.log(document.childNodes[1].nodeValue);

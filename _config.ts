@@ -1,6 +1,7 @@
 import lume from "lume/mod.ts";
 import eta from "lume/plugins/eta.ts";
 import postcss from "lume/plugins/postcss.ts";
+import basePath from "lume/plugins/base_path.ts";
 
 const site = lume({
   src: "./src",
@@ -13,6 +14,7 @@ site
   .copy("js")
   .use(eta())
   .use(postcss())
+  .use(basePath())
   .remoteFile(
     "/vendor/jquery/jquery.js",
     "https://code.jquery.com/jquery-3.5.1.min.js",
