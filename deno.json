@@ -1,7 +1,11 @@
 {
-  "importMap": "import_map.json",
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v1.19.1/"
+  },
+  "lock": false,
   "tasks": {
-    "build": "deno run -A https://deno.land/x/lume@v1.7.2/ci.ts",
-    "serve": "deno task build -s"
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s"
   }
 }

@@ -1,7 +1,6 @@
 import lume from "lume/mod.ts";
 import eta from "lume/plugins/eta.ts";
 import postcss from "lume/plugins/postcss.ts";
-import gpm from "https://deno.land/x/gpm@v0.5.0/mod.ts";
 
 const site = lume({
   src: "./src",
@@ -14,23 +13,29 @@ site
   .copy("js")
   .use(eta())
   .use(postcss())
-  .script(
-    "deploy",
-    "lume",
-    "rsync -r _site/ oscarotero@oscarotero.com:~/www/jquery",
+  .remoteFile(
+    "/vendor/jquery/jquery.js",
+    "https://code.jquery.com/jquery-3.5.1.min.js",
   )
-  .addEventListener("beforeBuild", () =>
-    gpm([
-      "jquery/jquery",
-      "dimsemenov/Magnific-Popup",
-      "necolas/normalize.css",
-      {
-        name: "selectize/selectize.js",
-        files: [
-          "dist/js/standalone/selectize.js",
-          "dist/css/selectize.css",
-        ],
-      },
-    ], "src/vendor"));
+  .remoteFile(
+    "/vendor/Magnific-Popup/jquery.magnific-popup.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
+  )
+  .remoteFile(
+    "/vendor/Magnific-Popup/magnific-popup.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css",
+  )
+  .remoteFile(
+    "/vendor/normalize.css/normalize.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css",
+  )
+  .remoteFile(
+    "/vendor/selectize/selectize.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js",
+  )
+  .remoteFile(
+    "/vendor/selectize/selectize.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.min.css",
+  );
 
 export default site;

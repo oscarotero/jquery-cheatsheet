@@ -1,7 +1,7 @@
-@import "//fonts.googleapis.com/css?family=Droid+Sans:regular,bold";
-@import "../vendor/normalize.css/normalize.css";
-@import "../vendor/selectize.js/selectize.css";
+@import "https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold";
+@import "../vendor/selectize/selectize.css";
 @import "../vendor/Magnific-Popup/magnific-popup.css";
+@import "../vendor/normalize.css/normalize.css";
 
 /* Variables */
 :root {

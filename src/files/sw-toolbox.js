@@ -768,7 +768,9 @@
         function pathToRegexp(e, t, r) {
           return t = t || [],
             isarray(t) ? r || (r = {}) : (r = t, t = []),
-            e instanceof RegExp ? regexpToRegexp(e, t) : isarray(e)
+            e instanceof RegExp
+              ? regexpToRegexp(e, t)
+              : isarray(e)
               ? arrayToRegexp(e, t, r)
               : stringToRegexp(e, t, r);
         }
