@@ -11,23 +11,6 @@ export default function init($modal, $links) {
     }
 
     switch (getValue("open_links")) {
-      case "modal-window":
-        e.preventDefault();
-
-        $modal.find(".link-api a").attr("href", $this.attr("href")).click();
-
-        $.magnificPopup.open({
-          items: {
-            src: $modal,
-            type: "inline",
-          },
-          mainClass: "modal-doc",
-          close: function () {
-            $modal.find("iframe").attr("src", "about:blank");
-          },
-        });
-        return;
-
       case "new-window":
         e.preventDefault();
 

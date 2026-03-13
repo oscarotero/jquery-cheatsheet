@@ -1,5 +1,5 @@
 const settings = {
-  open_links: "modal-window",
+  open_links: "same-window",
   layout: "horizontal",
   hide_removed: false,
   hide_deprecated: false,
